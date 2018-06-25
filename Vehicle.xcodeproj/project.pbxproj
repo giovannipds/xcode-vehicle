@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B3D2DC21F439E2D002D7D1C /* Floor is lava.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floor is lava.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B3D2DC21F439E2D002D7D1C /* Vehicle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vehicle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3D2DC51F439E2D002D7D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B3D2DC71F439E2D002D7D1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B3D2DCA1F439E2D002D7D1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		0B3D2DB91F439E2D002D7D1C = {
 			isa = PBXGroup;
 			children = (
-				0B3D2DC41F439E2D002D7D1C /* Floor is lava */,
+				0B3D2DC41F439E2D002D7D1C /* Vehicle */,
 				0B3D2DC31F439E2D002D7D1C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		0B3D2DC31F439E2D002D7D1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B3D2DC21F439E2D002D7D1C /* Floor is lava.app */,
+				0B3D2DC21F439E2D002D7D1C /* Vehicle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B3D2DC41F439E2D002D7D1C /* Floor is lava */ = {
+		0B3D2DC41F439E2D002D7D1C /* Vehicle */ = {
 			isa = PBXGroup;
 			children = (
 				0B3D2DC51F439E2D002D7D1C /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				0B3D2DCE1F439E2D002D7D1C /* LaunchScreen.storyboard */,
 				0B3D2DD11F439E2D002D7D1C /* Info.plist */,
 			);
-			path = "Floor is lava";
+			path = Vehicle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0B3D2DC11F439E2D002D7D1C /* Floor is lava */ = {
+		0B3D2DC11F439E2D002D7D1C /* Vehicle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B3D2DD41F439E2D002D7D1C /* Build configuration list for PBXNativeTarget "Floor is lava" */;
+			buildConfigurationList = 0B3D2DD41F439E2D002D7D1C /* Build configuration list for PBXNativeTarget "Vehicle" */;
 			buildPhases = (
 				0B3D2DBE1F439E2D002D7D1C /* Sources */,
 				0B3D2DBF1F439E2D002D7D1C /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = "Floor is lava";
+			name = Vehicle;
 			productName = "Floor is lava";
-			productReference = 0B3D2DC21F439E2D002D7D1C /* Floor is lava.app */;
+			productReference = 0B3D2DC21F439E2D002D7D1C /* Vehicle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -91,15 +91,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Rayan Slim";
 				TargetAttributes = {
 					0B3D2DC11F439E2D002D7D1C = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
-			buildConfigurationList = 0B3D2DBD1F439E2D002D7D1C /* Build configuration list for PBXProject "Floor is lava" */;
+			buildConfigurationList = 0B3D2DBD1F439E2D002D7D1C /* Build configuration list for PBXProject "Vehicle" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B3D2DC11F439E2D002D7D1C /* Floor is lava */,
+				0B3D2DC11F439E2D002D7D1C /* Vehicle */,
 			);
 		};
 /* End PBXProject section */
@@ -176,6 +177,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -183,6 +185,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -233,6 +236,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -240,6 +244,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -273,12 +278,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VSKQF4Y8J8;
-				INFOPLIST_FILE = "Floor is lava/Info.plist";
+				DEVELOPMENT_TEAM = 84CTC2EJLE;
+				INFOPLIST_FILE = "$(SRCROOT)/Vehicle/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Reveal-Inc.Planets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -287,12 +292,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VSKQF4Y8J8;
-				INFOPLIST_FILE = "Floor is lava/Info.plist";
+				DEVELOPMENT_TEAM = 84CTC2EJLE;
+				INFOPLIST_FILE = "$(SRCROOT)/Vehicle/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Reveal-Inc.Planets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -300,7 +305,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B3D2DBD1F439E2D002D7D1C /* Build configuration list for PBXProject "Floor is lava" */ = {
+		0B3D2DBD1F439E2D002D7D1C /* Build configuration list for PBXProject "Vehicle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B3D2DD21F439E2D002D7D1C /* Debug */,
@@ -309,13 +314,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B3D2DD41F439E2D002D7D1C /* Build configuration list for PBXNativeTarget "Floor is lava" */ = {
+		0B3D2DD41F439E2D002D7D1C /* Build configuration list for PBXNativeTarget "Vehicle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0B3D2DD51F439E2D002D7D1C /* Debug */,
 				0B3D2DD61F439E2D002D7D1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
