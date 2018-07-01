@@ -14,6 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
     let motionManager = CMMotionManager()
+    var vehicle = SCNPhysicsVehicle()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
@@ -77,10 +78,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let scene = SCNScene(named: "Car-Scene.scn")
         let frame = (scene?.rootNode.childNode(withName: "frame", recursively: false))!
+        let frontLeftWheel = frame.childNode(withName: "frontLeft", recursively: false)!
+        let frontRightWheel = frame.childNode(withName: "frontRight", recursively: false)!
+        let rearLeftWheel = frame.childNode(withName: "rearLeft", recursively: false)!
+        let rearRightWheel = frame.childNode(withName: "rearRight", recursively: false)!
+        
+        let v_frontLeftWheel = SCNPhysicsVehicleWheel(node: frontLeftWheel)
+        let v_frontRightWheel = SCNPhysicsVehicleWheel(node: frontRightWheel)
+        let v_rearLeftWheel = SCNPhysicsVehicleWheel(node: rearLeftWheel)
+        let v_rearRightWheel = SCNPhysicsVehicleWheel(node: rearRightWheel)
+        
+        
         frame.position = currentPositionOfCamera
         let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: frame, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
         frame.physicsBody = body
-        
+        self.vehicle = SCNPhysicsVehicle(chassisBody: frame.physicsBody!, wheels: [v_rearRightWheel, v_rearLeftWheel, v_frontRightWheel, v_frontLeftWheel])
+        self.sceneView.scene.physicsWorld.addBehavior(self.vehicle)
         self.sceneView.scene.rootNode.addChildNode(frame)
     }
     
