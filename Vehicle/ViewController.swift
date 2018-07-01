@@ -26,19 +26,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func createLava(planeAnchor: ARPlaneAnchor) -> SCNNode {
-        let lavaNode = SCNNode(geometry: SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(CGFloat(planeAnchor.extent.z))))
-        lavaNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "concrete")
-        lavaNode.geometry?.firstMaterial?.isDoubleSided = true
-        lavaNode.position = SCNVector3(planeAnchor.center.x,planeAnchor.center.y,planeAnchor.center.z)
-        lavaNode.eulerAngles = SCNVector3(90.degreesToRadians, 0, 0)
-        return lavaNode
+    func createConcrete(planeAnchor: ARPlaneAnchor) -> SCNNode {
+        let concreteNode = SCNNode(geometry: SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(CGFloat(planeAnchor.extent.z))))
+        concreteNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "concrete")
+        concreteNode.geometry?.firstMaterial?.isDoubleSided = true
+        concreteNode.position = SCNVector3(planeAnchor.center.x,planeAnchor.center.y,planeAnchor.center.z)
+        concreteNode.eulerAngles = SCNVector3(90.degreesToRadians, 0, 0)
+        let staticBody = SCNPhysicsBody.static()
+        concreteNode.physicsBody = staticBody
+        return concreteNode
     }
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
-        let lavaNode = createLava(planeAnchor: planeAnchor)
-        node.addChildNode(lavaNode)
+        let concreteNode = createConcrete(planeAnchor: planeAnchor)
+        node.addChildNode(concreteNode)
         print("new flat surface detected, new ARPlaneAnchor added")
         
     }
@@ -50,8 +52,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             childNode.removeFromParentNode()
             
         }
-        let lavaNode = createLava(planeAnchor: planeAnchor)
-        node.addChildNode(lavaNode)
+        let concreteNode = createConcrete(planeAnchor: planeAnchor)
+        node.addChildNode(concreteNode)
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
