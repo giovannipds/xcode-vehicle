@@ -16,6 +16,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     let motionManager = CMMotionManager()
     var vehicle = SCNPhysicsVehicle()
     var orientation: CGFloat = 0
+    var touched: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
@@ -25,6 +26,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.setUpAccelerometer()
         self.sceneView.showsStatistics = true
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touched = true
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touched = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,8 +108,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         // print("simulating physics")
+        var engineForce: CGFloat = 0
         self.vehicle.setSteeringAngle(orientation, forWheelAt: 2)
         self.vehicle.setSteeringAngle(orientation, forWheelAt: 3)
+        if self.touched == true {
+            engineForce = 50
+        } else {
+            engineForce = 0
+        }
+        self.vehicle.applyEngineForce(engineForce, forWheelAt: 0)
+        self.vehicle.applyEngineForce(engineForce, forWheelAt: 1)
+        
+        
+        
     }
     func setUpAccelerometer() {
         
