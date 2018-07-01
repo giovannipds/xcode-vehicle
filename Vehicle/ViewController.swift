@@ -78,10 +78,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let scene = SCNScene(named: "Car-Scene.scn")
         let chassis = (scene?.rootNode.childNode(withName: "chassis", recursively: false))!
-        let frontLeftWheel = chassis.childNode(withName: "frontLeft", recursively: false)!
-        let frontRightWheel = chassis.childNode(withName: "frontRight", recursively: false)!
-        let rearLeftWheel = chassis.childNode(withName: "rearLeft", recursively: false)!
-        let rearRightWheel = chassis.childNode(withName: "rearRight", recursively: false)!
+        let frontLeftWheel = chassis.childNode(withName: "frontLeftParent", recursively: false)!
+        let frontRightWheel = chassis.childNode(withName: "frontRightParent", recursively: false)!
+        let rearLeftWheel = chassis.childNode(withName: "rearLeftParent", recursively: false)!
+        let rearRightWheel = chassis.childNode(withName: "rearRightParent", recursively: false)!
         
         let v_frontLeftWheel = SCNPhysicsVehicleWheel(node: frontLeftWheel)
         let v_frontRightWheel = SCNPhysicsVehicleWheel(node: frontRightWheel)
