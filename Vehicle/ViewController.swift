@@ -73,12 +73,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let currentPositionOfCamera = orientation + location
         
         let scene = SCNScene(named: "Car-Scene.scn")
-        let carNode = (scene?.rootNode.childNode(withName: "frame", recursively: false))!
-        carNode.position = currentPositionOfCamera
-        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: carNode, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
-        carNode.physicsBody = body
+        let frame = (scene?.rootNode.childNode(withName: "frame", recursively: false))!
+        frame.position = currentPositionOfCamera
+        let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: frame, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
+        frame.physicsBody = body
         
-        self.sceneView.scene.rootNode.addChildNode(carNode)
+        self.sceneView.scene.rootNode.addChildNode(frame)
     }
 }
 
