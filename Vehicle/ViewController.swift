@@ -8,16 +8,19 @@
 
 import UIKit
 import ARKit
+import CoreMotion
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet weak var sceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
+    let motionManager = CMMotionManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.configuration.planeDetection = .horizontal
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
+        self.setUpAccelerometer()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -80,6 +83,27 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         self.sceneView.scene.rootNode.addChildNode(frame)
     }
+    
+    func setUpAccelerometer() {
+        
+        if motionManager.isAccelerometerAvailable {
+            motionManager.accelerometerUpdateInterval = 1/60
+            motionManager.startAccelerometerUpdates(to: .main, withHandler: { (accelerometerData, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                print("accelerometer is detecting acceleration")
+                
+            })
+            
+        } else {
+            print("accelerometer not available")
+        }
+        
+        
+    }
+    
 }
 
 func +(left: SCNVector3, right: SCNVector3) -> SCNVector3 {
