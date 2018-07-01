@@ -109,8 +109,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         // print("simulating physics")
         var engineForce: CGFloat = 0
-        self.vehicle.setSteeringAngle(orientation, forWheelAt: 2)
-        self.vehicle.setSteeringAngle(orientation, forWheelAt: 3)
+        self.vehicle.setSteeringAngle(-orientation, forWheelAt: 2)
+        self.vehicle.setSteeringAngle(-orientation, forWheelAt: 3)
         if self.touched == true {
             engineForce = 50
         } else {
