@@ -93,14 +93,20 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     print(error.localizedDescription)
                     return
                 }
-                print("accelerometer is detecting acceleration")
-                
+                self.accelerometerDidChange(acceleration: accelerometerData!.acceleration)
             })
             
         } else {
             print("accelerometer not available")
         }
         
+        
+    }
+    func accelerometerDidChange(acceleration: CMAcceleration) {
+        
+        print(acceleration.x)
+        print(acceleration.y)
+        print("")
         
     }
     
