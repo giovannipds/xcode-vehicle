@@ -101,6 +101,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         chassis.position = currentPositionOfCamera
         let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: chassis, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
+        body.mass = 5
         chassis.physicsBody = body
         self.vehicle = SCNPhysicsVehicle(chassisBody: chassis.physicsBody!, wheels: [v_rearRightWheel, v_rearLeftWheel, v_frontRightWheel, v_frontLeftWheel])
         self.sceneView.scene.physicsWorld.addBehavior(self.vehicle)
