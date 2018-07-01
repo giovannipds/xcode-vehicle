@@ -123,9 +123,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     func accelerometerDidChange(acceleration: CMAcceleration) {
         
-        self.orientation = CGFloat(acceleration.y)
-//        print(acceleration.x)
-        print(acceleration.y)
+        if acceleration.x > 0 {
+            self.orientation = -CGFloat(acceleration.y)
+        } else {
+            self.orientation = CGFloat(acceleration.y)
+        }
         
     }
     
