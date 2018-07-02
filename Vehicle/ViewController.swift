@@ -20,7 +20,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var touched: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+//        self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.configuration.planeDetection = .horizontal
         self.sceneView.session.run(configuration)
         self.sceneView.delegate = self
