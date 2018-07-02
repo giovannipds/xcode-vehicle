@@ -285,7 +285,7 @@
 				DEVELOPMENT_TEAM = 84CTC2EJLE;
 				INFOPLIST_FILE = "$(SRCROOT)/Vehicle/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ezoom;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ezoom.Vehicle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,7 +299,7 @@
 				DEVELOPMENT_TEAM = 84CTC2EJLE;
 				INFOPLIST_FILE = "$(SRCROOT)/Vehicle/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.ezoom;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.ezoom.Vehicle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
